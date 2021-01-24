@@ -1,32 +1,38 @@
 
-# .gitignore file for WordPress that ignores everything except for a theme and plugins:
+# .gitignore file for WordPress. Ignores everything except theme and plugins.
+# Located in the root folder
 # based on https://gist.github.com/jdbartlett/444295
 
+# Broad capture
 /*
+
+# Host and php files
 *wp-*.php
 **_wpeprivate/*
 **.wpe*
 
+# Public Root
 !.gitignore
 **favicon.ico
-!wp-content
 
+# Target wp-content
+!wp-content
 wp-content/*
+
+# Plugins
 **wp-content/mu-plugins
-!wp-content/themes
 wp-content/plugins/*
 !wp-content/plugins/my-plugin
 
+# Theme
+!wp-content/themes
 wp-content/themes/*
-#my theme
 !wp-content/themes/mowtown-ecommerce
 wp-content/themes/mowtown-ecommerce/node_modules/*
 wp-content/themes/mowtown-ecommerce/dist/*
 wp-content/themes/mowtown-ecommerce/assets/build/*
 
-
-# large/disallowed file types
-# a CDN should be used for these
+# Disallow large filetypes
 *.hqx
 *.bin
 *.exe

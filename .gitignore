@@ -1,87 +1,28 @@
-# *
-**/.DS_Store
-**/.idea*
-.history*
-.svn
-.cvs
-**/.htaccess
-php.ini
-*.bak
-*.swp
-**/Thumbs.db
-.env
-*.wpe-*
-*apple-*
-favicon.ico
 
+# .gitignore file for WordPress that ignores everything except for a theme and plugins:
+# based on https://gist.github.com/jdbartlett/444295
 
-#host specific
-.ftpquota
-.well-known
-.wpengine-conf
-.wpe-devkit
-_wpeprivate
+/*
+*wp-*.php
+**_wpeprivate/*
+**.wpe*
 
-# wordpress specific
-wp-config.php
-wp-content/uploads/*
-wp-content/upgrade/*
-wp-content/backup-db/*
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/cache/**
-**/mu-plugins
-**/plugins
-**/upgrade
+!.gitignore
+**favicon.ico
+!wp-content
 
+wp-content/*
+**wp-content/mu-plugins
+!wp-content/themes
+wp-content/plugins/*
+!wp-content/plugins/my-plugin
 
-# cache
-wp-content/object-cache.php
-wp-content/cache
-
-# wp core (as of 4.9.5)
-/db-config.php
-/index.php
-/license.txt
-/readme.html
-/wp-activate.php
-/wp-app.php
-/wp-atom.php
-/wp-blog-header.php
-/wp-comments-post.php
-/wp-commentsrss2.php
-/wp-config-sample.php
-/wp-cron.php
-/wp-feed.php
-/wp-links-opml.php
-/wp-load.php
-/wp-login.php
-/wp-mail.php
-/wp-rdf.php
-/wp-rss.php
-/wp-rss2.php
-/wp-pass.php
-/wp-register.php
-/wp-settings.php
-/wp-signup.php
-/wp-trackback.php
-/xmlrpc.php
-/wp-admin
-/wp-includes
-/wp-content/index.php
-
-# Theme Related
-/wp-content/themes/twenty*
-/wp-content/themes/shopical-pro
-
-# Theme: Mowtown-Ecommerce
-
-**/wp-content/themes/mowtown-ecommerce/assets/build/*
-**/node_modules
-**/dist
-**/npm-debug.log
-**/vendor
-**/index.php
+wp-content/themes/*
+#my theme
+!wp-content/themes/mowtown-ecommerce
+wp-content/themes/mowtown-ecommerce/node_modules/*
+wp-content/themes/mowtown-ecommerce/dist/*
+wp-content/themes/mowtown-ecommerce/assets/build/*
 
 
 # large/disallowed file types

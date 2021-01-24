@@ -8,8 +8,8 @@
  */
 
 const mix = require('laravel-mix');
-//const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-//require('laravel-mix-postcss-config');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+require('laravel-mix-postcss-config');
 mix
    // .disableNotifications()
     .js('assets/scripts/main.js', 'dist/js/main.js')
@@ -47,28 +47,28 @@ mix
     // //   'assets/fonts', 'dist/fonts/'
     // // )
     //
-    .browserSync({proxy: 'http://localhost:10058/'});
-    // .webpackConfig({
-    //         plugins: [
-    //             new CleanWebpackPlugin({
-    //                 // Simulate the removal of files
-    //                 // default: false
-    //                 dry: false,
-    //
-    //                 // Write Logs to Console
-    //                 // (Always enabled when dry is true)
-    //                 // default: false
-    //                 verbose: false,
-    //
-    //                 // Automatically remove all unused webpack assets on rebuild
-    //                 // default: true
-    //                 cleanStaleWebpackAssets: true,
-    //
-    //                 // Do not allow removal of current webpack assets
-    //                 // default: true
-    //                 protectWebpackAssets: true,
-    //                 cleanOnceBeforeBuildPatterns: ['dist/*', '!static-files*'],
-    //             })
-    //         ]
-    //     }
-    // );
+    .browserSync({proxy: 'http://localhost:10023/'})
+    .webpackConfig({
+            plugins: [
+                new CleanWebpackPlugin({
+                    // Simulate the removal of files
+                    // default: false
+                    dry: false,
+
+                    // Write Logs to Console
+                    // (Always enabled when dry is true)
+                    // default: false
+                    verbose: false,
+
+                    // Automatically remove all unused webpack assets on rebuild
+                    // default: true
+                    cleanStaleWebpackAssets: true,
+
+                    // Do not allow removal of current webpack assets
+                    // default: true
+                    protectWebpackAssets: true,
+                    cleanOnceBeforeBuildPatterns: ['dist/*', '!static-files*'],
+                })
+            ]
+        }
+    );
